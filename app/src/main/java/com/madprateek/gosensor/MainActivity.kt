@@ -5,7 +5,6 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -40,11 +39,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         if (event!!.values[0] > 30 && isRunning == false ){
             isRunning = true
             try{
-                //var filePath =  Environment.getExternalStorageDirectory()/Music/Mere Bina.mp3"
-                var mp = MediaPlayer()
-                mp.setDataSource("https://s1.vocaroo.com/media/download_temp/Vocaroo_s1IgjP1TWkrt.mp3")
-                mp.prepare()
-                mp.start()
+                Toast.makeText(this,"Brightness is High",Toast.LENGTH_LONG).show()
             }catch (ex : Exception){
                 Toast.makeText(this,"exception",Toast.LENGTH_LONG).show()
                 Log.d("HERE OCUUR",ex.message)
